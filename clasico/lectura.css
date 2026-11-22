@@ -1,0 +1,240 @@
+.clasico-motivos,
+.clasico-voces {
+  padding-block: clamp(3.3rem, 7.35vw, 6.75rem);
+}
+
+.clasico-lectura-titulo {
+  margin: 0;
+  font-size: clamp(2.15rem, 4.5vw, 3.82rem);
+  font-weight: 735;
+  line-height: 1.08;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+.clasico-motivos {
+  background: #edf2fa;
+  color: #12243b;
+}
+
+.clasico-motivos__pliego {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.65fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: start;
+}
+
+.clasico-motivos .clasico-lectura-titulo {
+  max-width: 10.5ch;
+}
+
+.clasico-motivos__lista {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #c2d0e2;
+  list-style: none;
+}
+
+.clasico-motivos__lista li {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.5fr);
+  gap: .4rem clamp(1.05rem, 2.55vw, 2.7rem);
+  padding-block: clamp(1rem, 2.3vw, 1.65rem);
+  border-top: 1px solid #c2d0e2;
+}
+
+.clasico-motivos__lista h3 {
+  color: #153866;
+  font-size: clamp(1.11rem, 1.85vw, 1.57rem);
+  font-weight: 735;
+  line-height: 1.24;
+  letter-spacing: -.02em;
+}
+
+.clasico-motivos__lista p {
+  max-width: 46ch;
+  color: #3d526b;
+  font-size: clamp(.96rem, 1.3vw, 1.045rem);
+  line-height: 1.64;
+}
+
+.clasico-voces {
+  --voces-linea: #304760;
+  --voces-claro: #c8dfff;
+  background: #09172a;
+  color: #f1f6fd;
+}
+
+.clasico-voces__lectura {
+  margin-top: clamp(1.35rem, 3.25vw, 2.7rem);
+  border-block: 1px solid var(--voces-linea);
+}
+
+.clasico-voces__lectura[data-activa] {
+  display: grid;
+  grid-template-columns: minmax(11rem, .55fr) minmax(0, 1.75fr);
+}
+
+.clasico-voces__lectura[data-activa] .clasico-voces__citas {
+  display: grid;
+  min-width: 0;
+  grid-area: 1 / 2;
+  border-inline-start: 1px solid var(--voces-linea);
+}
+
+.clasico-voces__lectura[data-activa] .clasico-voces__panel {
+  display: grid;
+  min-width: 0;
+  grid-area: 1 / 1;
+}
+
+.clasico-voces__lectura[data-activa] .clasico-voces__panel:not([data-seleccionado]) {
+  visibility: hidden;
+}
+
+.clasico-voces__lectura:not([data-activa]) .clasico-voces__panel + .clasico-voces__panel {
+  border-top: 1px solid var(--voces-linea);
+}
+
+.clasico-voces__panel figure {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: clamp(1rem, 2.35vw, 2rem);
+  margin: 0;
+  padding-block: clamp(1.55rem, 4.3vw, 3.65rem);
+}
+
+.clasico-voces__lectura[data-activa] figure {
+  padding-inline: clamp(1.1rem, 4.5vw, 4.15rem);
+}
+
+.clasico-voces__extracto {
+  align-self: center;
+  min-width: 0;
+}
+
+.clasico-voces__extracto blockquote {
+  max-width: 29ch;
+  margin: 0;
+  color: var(--voces-claro);
+  font-size: clamp(1.73rem, 3.5vw, 3.15rem);
+  font-weight: 670;
+  line-height: 1.17;
+  letter-spacing: -.029em;
+  text-wrap: balance;
+}
+
+.clasico-voces__extracto > p {
+  max-width: 52ch;
+  margin-top: clamp(.7rem, 1.7vw, 1.25rem);
+  color: #baccdf;
+  font-size: clamp(.95rem, 1.3vw, 1.06rem);
+  line-height: 1.6;
+}
+
+.clasico-voces__panel figcaption {
+  display: grid;
+  min-block-size: 2.9rem;
+  align-content: start;
+  gap: .12rem;
+  font-size: .93rem;
+  line-height: 1.35;
+}
+
+.clasico-voces__panel figcaption strong {
+  color: #f1f6fd;
+  font-weight: 735;
+}
+
+.clasico-voces__panel figcaption span {
+  color: #acc3df;
+  font-size: .84rem;
+}
+
+.clasico-voces__autores:not([hidden]) {
+  display: grid;
+  min-width: 0;
+  grid-area: 1 / 1;
+  align-content: center;
+  gap: .35rem;
+  padding: 1rem clamp(.8rem, 2.3vw, 1.65rem) 1rem 0;
+}
+
+.clasico-voces__autores button {
+  position: relative;
+  min-width: 0;
+  min-height: 46px;
+  padding: .5rem .75rem .5rem .92rem;
+  border: 0;
+  background: transparent;
+  color: #c3d4e8;
+  font: inherit;
+  font-size: .97rem;
+  font-weight: 680;
+  line-height: 1.25;
+  text-align: start;
+  cursor: pointer;
+}
+
+.clasico-voces__autores button:is(:hover, [aria-selected="true"]) {
+  background: #142945;
+  color: #f2f7ff;
+}
+
+.clasico-voces__autores button[aria-selected="true"]::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 2px;
+  background: var(--voces-claro);
+  content: "";
+}
+
+.clasico-voces :is(button, .clasico-voces__citas):focus-visible {
+  outline: 2px solid var(--voces-claro);
+  outline-offset: -2px;
+}
+
+@media (max-width: 780px) {
+  .clasico-motivos__pliego {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.35rem;
+  }
+  .clasico-motivos .clasico-lectura-titulo { max-width: none; }
+}
+
+@media (max-width: 600px) {
+  .clasico-motivos__lista li { grid-template-columns: minmax(0, 1fr); }
+  .clasico-voces__lectura[data-activa] { grid-template-columns: minmax(0, 1fr); }
+  .clasico-voces__lectura[data-activa] .clasico-voces__citas {
+    grid-area: auto;
+    border-inline-start: 0;
+  }
+  .clasico-voces__lectura[data-activa] figure { padding-inline: 0; }
+  .clasico-voces__panel figcaption { min-block-size: 2.7rem; }
+  .clasico-voces__autores:not([hidden]) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-area: auto;
+    gap: 0;
+    padding: 0;
+    border-top: 1px solid var(--voces-linea);
+  }
+  .clasico-voces__autores button {
+    padding: .6rem .28rem;
+    font-size: .82rem;
+    text-align: center;
+  }
+  .clasico-voces__autores button + button { border-inline-start: 1px solid var(--voces-linea); }
+  .clasico-voces__autores button[aria-selected="true"]::before {
+    inset: auto 0 0;
+    width: auto;
+    height: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .clasico-voces__autores button { transition: background-color 160ms ease-out, color 160ms ease-out; }
+}
+
+@media (forced-colors: active) {
+  .clasico-voces__autores button[aria-selected="true"] { box-shadow: inset 0 0 0 1px Highlight; }
+}
