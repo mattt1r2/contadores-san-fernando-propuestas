@@ -1,0 +1,220 @@
+.pie-institucional {
+  --pie-tinta: #102640;
+  --pie-texto: #f2f7fc;
+  --pie-secundario: #c3d5e4;
+  --pie-regla: #4b6279;
+  --pie-aire: clamp(2.65rem, 5.45vw, 5.5rem);
+  padding-block: 0 clamp(1.25rem, 2.4vw, 2.1rem);
+  background: var(--pie-tinta);
+  color: var(--pie-texto);
+}
+.pie-institucional .pie-columnas {
+  display: grid;
+  grid-template-columns: minmax(9rem, .85fr) minmax(15.5rem, 1.32fr) minmax(9.25rem, .88fr) minmax(8.1rem, .68fr);
+  align-items: stretch;
+  column-gap: clamp(1.2rem, 3.6vw, 4rem);
+}
+.pie-institucional .pie-columnas > * { min-width: 0; }
+.pie-institucional .pie-columnas > :not(.pie-identidad) {
+  align-self: start;
+  padding-block: var(--pie-aire);
+}
+
+.pie-institucional .pie-identidad {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .95rem;
+  padding: var(--pie-aire) clamp(.6rem, 1.3vw, 1.1rem) 1.8rem 0;
+}
+.pie-institucional .pie-logotipo {
+  display: inline-block;
+  width: min(100%, 12.2rem);
+}
+.pie-institucional .pie-logotipo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+.pie-institucional .pie-redes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .93rem;
+  width: min(100%, 12.2rem);
+  margin: 0;
+  padding: .85rem 0 0;
+  border-top: 1px solid #6c839a;
+  list-style: none;
+}
+.pie-institucional .pie-redes img {
+  display: block;
+  width: 1.18rem;
+  height: 1.18rem;
+  object-fit: contain;
+  opacity: .83;
+  filter: brightness(0) invert(1);
+}
+
+.pie-institucional h2 {
+  margin: 0 0 .73rem;
+  color: var(--pie-secundario);
+  font-size: .99rem;
+  font-weight: 620;
+  line-height: 1.3;
+}
+.pie-institucional a { color: var(--pie-texto); text-underline-offset: .23em; }
+.pie-institucional a:focus-visible {
+  outline: 2px solid #b1deff;
+  outline-offset: 4px;
+}
+.pie-institucional .pie-contacto > a:not(.pie-whatsapp),
+.pie-institucional .pie-mapa {
+  display: table;
+  max-width: 100%;
+}
+.pie-institucional .pie-telefono {
+  margin-top: .15rem;
+  font-size: 1.3rem;
+  font-weight: 670;
+  line-height: 1.35;
+  text-decoration: none;
+}
+.pie-institucional .pie-telefono:hover { text-decoration: underline; }
+.pie-institucional .pie-correo {
+  margin-top: .35rem;
+  font-size: .94rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.pie-institucional .pie-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: .9rem;
+  padding: .42rem 1rem;
+  border: 1px solid #bddcf4;
+  border-radius: .3rem;
+  background: #d9edf9;
+  color: #102640;
+  font-size: .94rem;
+  font-weight: 680;
+  line-height: 1.2;
+  text-decoration: none;
+}
+.pie-institucional .pie-whatsapp:is(:hover, :focus-visible) { background: #fff; }
+.pie-institucional address { color: var(--pie-texto); font-style: normal; line-height: 1.54; }
+.pie-institucional .pie-mapa {
+  min-height: 44px;
+  margin-top: .16rem;
+  padding-block: .5rem;
+  color: #dbedfc;
+  font-size: .94rem;
+}
+.pie-institucional .pie-navegacion ul { margin: 0; padding: 0; list-style: none; }
+.pie-institucional .pie-navegacion a {
+  display: inline-flex;
+  min-height: 2.45rem;
+  align-items: center;
+  padding-block: .16rem;
+  text-decoration: none;
+}
+.pie-institucional .pie-navegacion a:is(:hover,:focus-visible) { text-decoration: underline; }
+
+.pie-institucional .pie-base {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: .45rem 1.5rem;
+  padding-top: .95rem;
+  border-top: 1px solid var(--pie-regla);
+}
+.pie-institucional .pie-base p { margin: 0; color: var(--pie-secundario); font-size: .83rem; }
+.pie-institucional .pie-credito {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .28rem .47rem;
+  min-height: 44px;
+  color: var(--pie-secundario);
+  font-size: .71rem;
+  font-weight: 550;
+  letter-spacing: .045em;
+  line-height: 1.35;
+  text-decoration: none;
+}
+.pie-institucional .pie-credito-marca {
+  display: inline-flex;
+  align-items: center;
+  gap: .31rem;
+  color: var(--pie-texto);
+  font-weight: 670;
+  white-space: nowrap;
+}
+.pie-institucional .pie-credito-marca img { display: block; width: 1.3rem; height: auto; }
+.pie-institucional .pie-credito-marca svg { width: .72rem; height: .72rem; }
+.pie-institucional .pie-credito:is(:hover,:focus-visible) .pie-credito-marca span { text-decoration: underline; }
+
+@media (max-width: 960px) {
+  .pie-institucional .pie-columnas {
+    grid-template-columns: minmax(8.5rem, .78fr) minmax(12.75rem, 1.23fr) minmax(7rem, .86fr);
+    column-gap: clamp(1rem, 3vw, 2.25rem);
+  }
+  .pie-institucional .pie-identidad { grid-row: 1 / 3; }
+  .pie-institucional .pie-columnas > :not(.pie-identidad) { padding-block: 0; }
+  .pie-institucional .pie-columnas > .pie-contacto,
+  .pie-institucional .pie-columnas > .pie-oficina {
+    grid-row: 1;
+    padding-top: var(--pie-aire);
+  }
+  .pie-institucional .pie-columnas > .pie-contacto { grid-column: 2; }
+  .pie-institucional .pie-columnas > .pie-oficina { grid-column: 3; }
+  .pie-institucional .pie-columnas > .pie-navegacion {
+    grid-column: 2 / -1;
+    grid-row: 2;
+    margin-top: 1.45rem;
+    padding-bottom: var(--pie-aire);
+  }
+  .pie-institucional .pie-navegacion ul { display: flex; flex-wrap: wrap; gap: 0 1rem; }
+}
+
+@media (max-width: 680px) {
+  .pie-institucional .pie-columnas {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 1.1rem;
+  }
+  .pie-institucional .pie-identidad {
+    grid-row: auto;
+    grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: .8rem;
+    padding: 1.9rem 0 1.25rem;
+    border-bottom: 1px solid var(--pie-regla);
+  }
+  .pie-institucional .pie-logotipo { width: min(100%, 9.75rem); }
+  .pie-institucional .pie-redes {
+    width: auto;
+    padding: 0;
+    border-top: 0;
+  }
+  .pie-institucional .pie-columnas > .pie-contacto {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    padding-top: 1.65rem;
+  }
+  .pie-institucional .pie-columnas > .pie-oficina,
+  .pie-institucional .pie-columnas > .pie-navegacion {
+    grid-column: auto;
+    grid-row: auto;
+    margin-top: 0;
+    padding-block: 1.6rem 1.55rem;
+  }
+  .pie-institucional .pie-navegacion ul { display: block; }
+  .pie-institucional .pie-base { align-items: start; flex-direction: column; }
+}

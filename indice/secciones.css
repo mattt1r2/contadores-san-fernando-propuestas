@@ -1,0 +1,211 @@
+.indice-quienes {
+  padding-block: clamp(2.65rem, 5.6vw, 5.35rem);
+  background: var(--papel, #f6f8f9);
+  color: var(--tinta, #172d41);
+}
+.indice-quienes__registro {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.68fr) minmax(8rem, .51fr);
+  align-items: start;
+  gap: clamp(.95rem, 2.5vw, 2.7rem);
+  padding-block: clamp(1.4rem, 2.9vw, 2.85rem);
+  border-block: 1px solid var(--linea, #c9d4df);
+}
+.indice-quienes h2,
+.indice-motivos h2,
+.indice-testimonios h2 {
+  margin: 0;
+  font-size: clamp(2.15rem, 4vw, 3.85rem);
+  font-weight: 660;
+  line-height: 1.04;
+  letter-spacing: -.023em;
+  text-wrap: balance;
+}
+.indice-quienes__registro > p {
+  max-width: 38ch;
+  margin: 0;
+  padding-inline-start: clamp(.8rem, 1.65vw, 1.55rem);
+  border-inline-start: 2px solid var(--azul, #254d95);
+  font-size: clamp(1.11rem, 1.88vw, 1.54rem);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+.indice-quienes__registro strong { color: var(--azul, #254d95); }
+.indice-quienes__registro > a {
+  align-self: end;
+  justify-self: start;
+  color: var(--azul, #254d95);
+  font-weight: 645;
+  line-height: 1.4;
+  text-underline-offset: .22em;
+}
+
+.indice-motivos {
+  padding-block: clamp(3rem, 6.15vw, 6.1rem);
+  background: #fff;
+  color: var(--tinta, #172d41);
+}
+.indice-motivos__pliego {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.9fr);
+  gap: clamp(1.3rem, 5.3vw, 5.5rem);
+  align-items: start;
+}
+.indice-motivos h2 { max-width: 10ch; }
+.indice-motivos__lista {
+  --margen-hitos: clamp(2.3rem, 4vw, 3.6rem);
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 var(--margen-hitos);
+  border-block: 1px solid var(--linea, #c9d4df);
+  background: linear-gradient(to right, #eef3fa 0 var(--margen-hitos), transparent var(--margen-hitos));
+  list-style: none;
+}
+.indice-motivos__lista::before {
+  position: absolute;
+  inset: 0 auto 0 calc(var(--margen-hitos) / 2);
+  width: 1px;
+  background: #9bb0cf;
+  content: "";
+}
+.indice-motivos__lista li {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, .82fr) minmax(0, 1.72fr);
+  gap: .5rem clamp(.9rem, 1.85vw, 1.8rem);
+  align-items: baseline;
+  padding: clamp(.95rem, 2.2vw, 1.55rem) clamp(.9rem, 2.2vw, 1.55rem);
+}
+.indice-motivos__lista li + li { border-top: 1px solid var(--linea, #c9d4df); }
+.indice-motivos__lista li::before {
+  position: absolute;
+  top: 50%;
+  inset-inline-start: calc(-1 * var(--margen-hitos) / 2);
+  width: .6rem;
+  height: .6rem;
+  transform: translate(-50%, -50%);
+  border: 1px solid #eef3fa;
+  background: var(--azul, #254d95);
+  box-shadow: 0 0 0 1px #9bb0cf;
+  content: "";
+}
+.indice-motivos__lista h3 {
+  margin: 0;
+  color: var(--azul, #254d95);
+  font-size: clamp(1.05rem, 1.65vw, 1.43rem);
+  font-weight: 680;
+  line-height: 1.18;
+  text-wrap: balance;
+}
+.indice-motivos__lista p {
+  max-width: 53ch;
+  margin: 0;
+  color: #344c61;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.indice-testimonios {
+  --indice-regla-azul: #bfd5f760;
+  padding-block: clamp(3rem, 5.8vw, 5.85rem);
+  background: #193e7a;
+  color: #f7fbff;
+}
+.indice-testimonios__cabecera {
+  padding-bottom: clamp(1.05rem, 2vw, 1.85rem);
+  border-bottom: 1px solid var(--indice-regla-azul);
+}
+.indice-testimonios__marcas {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: .36rem;
+}
+.indice-testimonios__marcas button {
+  position: relative;
+  min-height: 44px;
+  width: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #f7fbff;
+  font: inherit;
+  font-size: .85rem;
+}
+.indice-testimonios__marcas button::before,
+.indice-testimonios__marcas button span {
+  position: absolute;
+  inset: calc(50% - 2px) 0 auto;
+  height: 3px;
+}
+.indice-testimonios__marcas button::before { content: ""; background: #7896c0; }
+.indice-testimonios__marcas button[aria-current]::before { background: #aec8eb; }
+.indice-testimonios__marcas button span { background: #fff; transform: scaleX(0); transform-origin: left center; }
+.indice-testimonios__marcas button[aria-current] span { transform: scaleX(1); }
+.indice-testimonios__estado {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.indice-testimonios__voces[data-activo] { display: grid; }
+.indice-testimonios__voces[data-activo] > figure { grid-area: 1 / 1; }
+.indice-testimonios__voz[aria-hidden="true"] { visibility: hidden; }
+.indice-testimonios__voz {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(12rem, .36fr);
+  gap: 1.6rem clamp(1.7rem, 5.8vw, 5.5rem);
+  align-items: center;
+  margin: 0;
+  padding-block: clamp(1.6rem, 3.6vw, 3.45rem);
+  border-bottom: 1px solid var(--indice-regla-azul);
+}
+.indice-testimonios__voz figcaption {
+  display: grid;
+  gap: .28rem;
+  padding: .72rem 0 .72rem 1.18rem;
+  border-inline-start: 1px solid #adcaf4aa;
+}
+.indice-testimonios__voz figcaption strong {
+  font-size: clamp(1.02rem, 1.6vw, 1.36rem);
+  font-weight: 680;
+  line-height: 1.16;
+}
+.indice-testimonios__voz figcaption span {
+  color: #dce9ff;
+  font-size: .91rem;
+  line-height: 1.28;
+}
+.indice-testimonios blockquote {
+  max-width: 30ch;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.62rem, 3.5vw, 3.25rem);
+  font-weight: 580;
+  line-height: 1.12;
+  letter-spacing: -.02em;
+}
+.indice-testimonios blockquote p { margin: 0; font: inherit; color: inherit; text-wrap: pretty; }
+.indice-testimonios__resumen {
+  max-width: 58ch;
+  margin: clamp(.65rem, 1.65vw, 1.4rem) 0 0;
+  color: #e0eaff;
+  line-height: 1.55;
+}
+.indice-testimonios button:focus-visible { outline: 2px solid #e0edff; outline-offset: 3px; }
+
+@media (max-width: 950px) {
+  .indice-quienes__registro { grid-template-columns: minmax(0, .83fr) minmax(0, 1.7fr); }
+  .indice-quienes__registro > a { grid-column: 2; }
+}
+@media (max-width: 680px) {
+  .indice-quienes__registro,
+  .indice-motivos__pliego { grid-template-columns: minmax(0, 1fr); }
+  .indice-quienes__registro > a { grid-column: 1; }
+  .indice-motivos h2 { max-width: none; }
+  .indice-motivos__lista li { grid-template-columns: minmax(0, 1fr); }
+  .indice-testimonios__voz { grid-template-columns: minmax(0, 1fr); }
+  .indice-testimonios__voz figcaption { padding-block: .45rem; padding-inline-start: .85rem; }
+}

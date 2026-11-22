@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Propuestas de rediseño · BPM</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: system-ui, "Segoe UI", sans-serif;
+      color: #172c3d;
+      background: #f7f8f5;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body { margin: 0; }
+
+    .contenedor {
+      width: min(76rem, calc(100% - 2 * clamp(1.15rem, 5vw, 4rem)));
+      margin-inline: auto;
+    }
+
+    header {
+      padding-block: 1.1rem;
+      border-bottom: 1px solid #d8e0e5;
+    }
+
+    .marca {
+      display: block;
+      width: 6.65rem;
+      height: auto;
+    }
+
+    main { padding-block: clamp(2.55rem, 6vw, 5.15rem); }
+
+    h1 {
+      margin: 0 0 clamp(1.6rem, 3.8vw, 2.8rem);
+      font-size: clamp(2.05rem, 5.1vw, 3.8rem);
+      font-weight: 660;
+      line-height: 1.08;
+      letter-spacing: -.045em;
+      text-wrap: balance;
+    }
+
+    .propuestas {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(.9rem, 2.2vw, 1.65rem);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .propuesta {
+      display: block;
+      min-width: 0;
+      border: 1px solid #d0dbe1;
+      color: inherit;
+      background: #fff;
+      text-decoration: none;
+    }
+
+    .propuesta img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 12 / 7;
+      object-fit: cover;
+      object-position: top center;
+      background: #e5ecf1;
+    }
+
+    .propuesta-nombre {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 3.65rem;
+      padding: .8rem 1.05rem;
+      border-top: 1px solid #dce4e9;
+      font-size: 1.07rem;
+      font-weight: 680;
+    }
+
+    .propuesta-nombre span {
+      flex-shrink: 0;
+      color: #235297;
+      font-size: 1.2rem;
+    }
+
+    .propuesta:hover { border-color: #235297; }
+    .propuesta:hover .propuesta-nombre { color: #235297; }
+
+    .propuesta:focus-visible {
+      outline: 3px solid #235297;
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 48rem) {
+      .propuestas { grid-template-columns: minmax(0, 1fr); }
+      h1 { text-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="contenedor">
+      <img class="marca" src="institucional/assets/bpm.png" width="727" height="343" alt="BPM Contadores Auditores">
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <h1>Propuestas de rediseño</h1>
+    <ul class="propuestas">
+      <li>
+        <a class="propuesta" href="institucional/">
+          <img src="vistas/institucional.jpg" width="1440" height="840" alt="">
+          <span class="propuesta-nombre">Institucional <span aria-hidden="true">→</span></span>
+        </a>
+      </li>
+      <li>
+        <a class="propuesta" href="panorama/">
+          <img src="vistas/panorama.jpg" width="1440" height="840" alt="">
+          <span class="propuesta-nombre">Panorama <span aria-hidden="true">→</span></span>
+        </a>
+      </li>
+      <li>
+        <a class="propuesta" href="indice/">
+          <img src="vistas/indice.jpg" width="1440" height="840" alt="">
+          <span class="propuesta-nombre">Índice <span aria-hidden="true">→</span></span>
+        </a>
+      </li>
+    </ul>
+  </main>
+</body>
+</html>
